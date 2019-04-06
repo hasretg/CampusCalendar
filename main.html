@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<meta charset="UTF-8"> 
+<html>
+<head>
+	<title>Spatial-temporal Calendar Map </title>
+	<link rel="stylesheet" href="css/main.css">
+	<script type="text/javascript" src='js/map.js'> </script>
+	<script src='data/vectorDataJS/buildings.js'> </script>
+	<script src='data/vectorDataJS/zentrum.js'> </script>
+	<script src='data/vectorDataJS/forest.js'> </script>
+	<script src='data/calendarData/calendarBachelor1Sem.js'> </script>
+	<script src='data/calendarData/calendarMaster1Sem.js'> </script>
+	<script src='css/GoogleMapsStyle.js'> </script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/importCalendar.js"></script>
+	<script src="js/update.js"></script>
+	</head>
+<body>
+	<div class = "header">
+		<a style = "position:absolute;top: 5px; left:30px;" href = "index.html">
+			<img src="data/images/ethlogo.png" height="50">
+		</a>
+		<a id = 'GoAbout' href = "about.html"><h6>About</h6></a>
+	</div>
+	<div class = "mainWindow">
+		<div id = "mapContainer">
+			<div id = "map"></div>
+			<div id = "TimeBubble">8:00</div>
+				<div class="slidercontainer">
+					<input id="slider" type="range" min="8" max="19" value="1" class="slider" step="1" list="tickmarks" oninput=update(this.value)>
+			</div> 	
+		</div>	
+		<div class = "calendar"> 
+			<div class = "calendar_top">
+				<div class = "calendar_text" style = "text-align:center" > 
+					<b class = "calendar_title"> Calendar </b>
+				</div>
+				<div class="dropdown">
+					<select class="dropbtn" onchange="importCalendar(this.value)"> 
+						<option value="">Import a calendar</option>
+						<option value="Daniel">Daniel (Master 1. Semester)</option>
+						<option value="Miriam">Miriam (Bachelor 1. Semester)</option>
+					</select>
+				</div>
+			</div>
+			<div id = "calendar_weeks_div", class = "calendar_weeks">
+					<button id = "buttonWeekday_1", class="buttonWeekday", type="button", onclick="loadWeekday(1)">Mon</button>
+					<button id = "buttonWeekday_2", class="buttonWeekday", type="button", onclick="loadWeekday(2)">Tue</button>
+					<button id = "buttonWeekday_3", class="buttonWeekday", type="button", onclick="loadWeekday(3)">Wed</button>
+					<button id = "buttonWeekday_4", class="buttonWeekday", type="button", onclick="loadWeekday(4)">Thu</button>
+					<button id = "buttonWeekday_5", class="buttonWeekday", type="button", onclick="loadWeekday(5)">Fri</button>
+			</div>
+				
+			<div class = "hours_container" >
+				
+				<!--  Hour 8 --> 
+				<div class = "hours", id ="hour_8", onclick="update(8)">
+					<div class = "hour_number">
+						<p style ="margin: 10px;" >8</p>
+					</div>
+					<div class = "hour_text", id="hour_8_text">
+						
+					</div>
+				</div>
+				
+				<!--  Hour 9 --> 
+				<div class = "hours", id ="hour_9", onclick="update(9)">
+					<div class = "hour_number">
+						<p style ="margin: 10px;" >9</p>
+					</div>
+					<div class = "hour_text", id="hour_9_text">
+						
+					</div>
+				</div>
+
+				<!--  Hour 10 --> 
+				<div class = "hours", id ="hour_10", onclick="update(10)">
+					<div class = "hour_number">
+							<p style ="margin: 10px;" >10</p>
+					</div>
+					<div class = "hour_text", id="hour_10_text">
+						
+						</div>
+				</div>
+
+				<!--  Hour 11 --> 
+				<div class = "hours", id ="hour_11", onclick="update(11)">
+					<div class = "hour_number">
+							<p style ="margin: 10px;" >11</p>
+					</div>
+					<div class = "hour_text", id="hour_11_text">
+						
+						</div>
+				</div>
+
+				<!--  Hour 12 --> 
+				<div class = "hours", id ="hour_12", onclick="update(12)">
+					<div class = "hour_number">
+							<p style ="margin: 10px;" >12</p>
+					</div>	
+					<div class = "hour_text", id="hour_12_text">
+						
+						</div>		
+				</div>
+
+				<!--  Hour 13 --> 
+				<div class = "hours", id ="hour_13", onclick="update(13)">
+					<div class = "hour_number">
+							<p style ="margin: 10px;" >13</p>
+					</div>
+					<div class = "hour_text", id="hour_13_text">
+						
+						</div>			
+				</div>
+
+				<!--  Hour 14 --> 
+				<div class = "hours", id ="hour_14", onclick="update(14)">
+					<div class = "hour_number">
+							<p style ="margin: 10px;" >14</p>
+					</div>	
+					<div class = "hour_text", id="hour_14_text">
+						
+						</div>		
+				</div>
+
+				<!--  Hour 15 --> 
+				<div class = "hours", id ="hour_15", onclick="update(15)">
+					<div class = "hour_number">
+							<p style ="margin: 10px;" >15</p>
+					</div>	
+					<div class = "hour_text", id="hour_15_text">
+						
+						</div>		
+				</div>
+
+				<!--  Hour 16 --> 
+				<div class = "hours", id ="hour_16", onclick="update(16)">
+					<div class = "hour_number">
+							<p style ="margin: 10px;" >16</p>
+					</div>	
+					<div class = "hour_text", id="hour_16_text">
+						
+						</div>		
+				</div>
+
+				<!--  Hour 17 --> 
+				<div class = "hours", id ="hour_17", onclick="update(17)">
+					<div class = "hour_number">
+							<p style ="margin: 10px;" >17</p>
+					</div>
+					<div class = "hour_text", id="hour_17_text">
+						
+						</div>		
+				</div>
+
+				<!--  Hour 18 --> 
+				<div class = "hours", id ="hour_18", onclick="update(18)">
+					<div class = "hour_number">
+							<p style ="margin: 10px;" >18</p>
+					</div>	
+					<div class = "hour_text", id="hour_18_text">
+						
+						</div>		
+				</div>
+
+				<!--  Hour 19 --> 
+				<div class = "hours", id ="hour_19", onclick="update(19)">
+					<div class = "hour_number">
+							<p style ="margin: 10px;" >19</p>
+					</div>
+				</div>
+				<div class = "hour_text", id="hour_19_text">
+						
+					</div>
+			</div>
+		</div>
+	<!--Slider-->   
+	</div> 
+	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+
+
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsNWpI62d5N5SAA-fq3XWzsNTn-swfz48&callback=initMap"></script>
+	<!-- <input id="files" type="file" /> -->
+</body>
+</html>

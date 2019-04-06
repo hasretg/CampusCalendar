@@ -1,0 +1,95 @@
+html {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	height: 100%;
+}
+
+body {
+	font-family: "Roboto", sans-serif;	
+	font-weight: 300;
+	margin: 0;
+	margin-top: -20px;
+	height: 100%;
+	background-color: #1F407A;
+	color: #ffffff;
+}
+
+a {
+	color: #ffffff;
+	font-size: 30px;
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	color: #ffffff;
+}
+
+.header {
+	height: 12%;
+	padding: 0;
+	background: #1F407A;
+	color: #ffffff;
+}
+
+.mainWindow {
+	height: 88%;
+	position: relative;
+	background-color: #eaecee;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-height: 10vh;
+	color: #000000;
+}
+
+.upperPart {
+	height: 65%;
+	width: 100%;
+}
+
+.lowerPart {
+	height: 35%;
+	width: 100%;
+}
+
+.buttonToMain {
+	position: relative;
+	top:0px;
+	left:25%;
+	width: 50%;
+
+	border-radius: 25px;
+	text-align: center;
+}
+
+.linkToMain {
+    padding:1em;
+    text-align: center;
+    display:inline-block;
+    text-decoration: none;
+    margin:0 auto;
+
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.buttonToMain:hover {
+	background-color: #1F407A;
+}
+
+.ethlogo {
+	float: left;
+	width: 50%;
+	height:100%;
+}
+.ikglogo{
+	float: right;
+	width: 50%;
+	height:100%;
+}
